@@ -1,8 +1,27 @@
 <div class="main-info">
-    <div class="main-info__title">Informacion de los Metodos</div>
-    <div class="main-info__conainer-cards">
-        <div class="main-info__conainer-cards__card" *ngFor="let metedo of arrayMetedos">
-            b
-        </div>
+  <div class="main-info__title">Informacion de los Metodos</div>
+  <div class="main-info__conainer-cards">
+    <div
+      class="main-info__conainer-cards__card"
+      *ngFor="let metedo of arrayMetedos"
+    >
+      <iframe
+        class="main-info__conainer-cards__card__contene-video"
+        [src]="metedo.url"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <div class="main-info__conainer-cards__card__name">
+        <p  class="main-info__conainer-cards__card__name__font-name">{{ metedo.name}}</p>
+      </div>
+
+      <div class="main-info__conainer-cards__card__content-description">
+        {{metedo.description}}
+      </div>
     </div>
+  </div>
 </div>

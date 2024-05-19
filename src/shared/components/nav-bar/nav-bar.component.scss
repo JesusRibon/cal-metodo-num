@@ -21,6 +21,8 @@
 
         &__font-left {
             cursor: pointer;
+            font-size: 14px;
+            user-select: none;
         }
     }
 
@@ -31,7 +33,13 @@
         grid-area: 1 / 2 / 2 / 3;
         gap: 11%;
 
-    }  
+        &__font-center {
+          cursor: pointer;
+            user-select: none;
+            font-size: 14px;
+        }
+
+    }
 
     &__ubic-right {
         display: flex;

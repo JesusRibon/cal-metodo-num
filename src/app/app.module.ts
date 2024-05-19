@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { NavBarComponent } from 'src/shared/components/nav-bar/nav-bar.component';
+import { CalculadoraMetodosComponent } from './pages/calculadora-metodos/calculadora-metodos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
-    NavBarComponent
+    NavBarComponent,
+    CalculadoraMetodosComponent
   ],
   imports: [
     BrowserModule,
