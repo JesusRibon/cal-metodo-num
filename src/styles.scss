@@ -3,6 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-// :root {
-    
-// }
+input.input-number::-webkit-outer-spin-button,
+input.input-number::-webkit-inner-spin-button {
+  display: none;
+}

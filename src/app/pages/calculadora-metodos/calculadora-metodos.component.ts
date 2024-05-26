@@ -20,9 +20,9 @@ export class CalculadoraMetodosComponent {
   ) {
     this.calcForm = this.fb.group({
       functionStr: ['', Validators.required],
-      lowerLimit: [0, Validators.required],
-      upperLimit: [1, Validators.required],
-      intervals: [4, Validators.required]
+      lowerLimit: ['', Validators.required],
+      upperLimit: ['', Validators.required],
+      intervals: ['', Validators.required]
     });
   }
 
@@ -59,11 +59,7 @@ export class CalculadoraMetodosComponent {
       if (functionStr.includes('log') && (lowerLimit <= 0 || upperLimit <= 0)) {
         throw new Error('El argumento de la función logarítmica debe ser mayor que cero.');
       }
-
-      // Calcular delta
       this.delta = (upperLimit - lowerLimit) / intervals;
-
-      // Calcular el resultado
       this.result = this.service[method](f, lowerLimit, upperLimit, intervals);
     } catch (error) {
       console.error('Error al calcular:', error);

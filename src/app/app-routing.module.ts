@@ -6,7 +6,7 @@ import { CalculadoraMetodosComponent } from './pages/calculadora-metodos/calcula
 const routes: Routes = [
   {
     path: '',
-    component: PrincipalComponent
+    component: CalculadoraMetodosComponent
   },
   {
     path: 'calculadora',

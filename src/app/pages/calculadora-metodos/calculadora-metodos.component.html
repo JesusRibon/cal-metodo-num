@@ -1,34 +1,44 @@
-<form [formGroup]="calcForm">
-  <div>
-    <label>Función:</label>
-    <input formControlName="functionStr" placeholder="Escribe tu función aquí">
+<div class="main-calculadora">
+  <div class="main-calculadora__content">
+    <form [formGroup]="calcForm">
+      <div class="main-calculadora__content__label">
+        <label>Función:</label>
+        <input formControlName="functionStr" placeholder="Escribe tu función aquí"  class="main-calculadora__content__label__input">
+      </div>
+
+      <div class="main-calculadora__content__label">
+        <label>Límite inferior:</label>
+        <input type="number" formControlName="lowerLimit" placeholder="limite inferior aqui" class="main-calculadora__content__label__input input-number">
+      </div>
+
+      <div class="main-calculadora__content__label">
+        <label>Límite superior:</label>
+        <input type="number" formControlName="upperLimit" placeholder="limite superior aqui" class="main-calculadora__content__label__input input-number">
+      </div>
+
+      <div class="main-calculadora__content__label">
+        <label>Número de intervalos:</label>
+        <input type="number" formControlName="intervals" placeholder="Numero de intervalos" class="main-calculadora__content__label__input input-number">
+      </div>
+
+      <div class="main-calculadora__content__container-button">
+        <button type="button" [disabled]="calcForm.invalid" (click)="calculateTrapezoidal()"  class="main-calculadora__content__container-button__button">Trapezoidal</button>
+        <button type="button" [disabled]="calcForm.invalid" (click)="calculateSimpson13()"  class="main-calculadora__content__container-button__button">Simpson 1/3</button>
+        <button type="button" [disabled]="calcForm.invalid" (click)="calculateSimpson38()"  class="main-calculadora__content__container-button__button">Simpson 3/8</button>
+        <button type="button" [disabled]="calcForm.invalid" (click)="calculateSimpsonAbierto()"  class="main-calculadora__content__container-button__button">Simpson Abierto</button>
+        <button type="button"  [disabled]="calcForm.invalid"(click)="calculateJorgeBoole()"  class="main-calculadora__content__container-button__button">Jorge Boole</button>
+      </div>
+    </form>
   </div>
 
-  <div>
-    <label>Límite inferior:</label>
-    <input type="number" formControlName="lowerLimit">
-  </div>
 
   <div>
-    <label>Límite superior:</label>
-    <input type="number" formControlName="upperLimit">
+    <span>delta es:{{delta}}</span>
+    <hr>
+    <label>Resultado:</label>
+    <span>{{ result }}</span>
   </div>
-
-  <div>
-    <label>Número de intervalos:</label>
-    <input type="number" formControlName="intervals">
-  </div>
-
-  <button type="button" (click)="calculateTrapezoidal()">Trapezoidal</button>
-  <button type="button" (click)="calculateSimpson13()">Simpson 1/3</button>
-  <button type="button" (click)="calculateSimpson38()">Simpson 3/8</button>
-  <button type="button" (click)="calculateSimpsonAbierto()">Simpson Abierto</button>
-  <button type="button" (click)="calculateJorgeBoole()">Jorge Boole</button>
-</form>
-
-<div>
-  <span>delta es:{{delta}}</span>
-  <hr>
-  <label>Resultado:</label>
-  <span>{{ result }}</span>
 </div>
+
+
+
